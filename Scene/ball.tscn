@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwotovyk2ru7t"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0wd17"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c2f4g"]
+radius = 20.0
+
+[node name="Ball" type="RigidBody2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(-2.2826969e-06, 0.1351394)
+rotation = 3.1415927
+scale = Vector2(39.604652, -39.754383)
+mesh = SubResource("SphereMesh_0wd17")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_c2f4g")
