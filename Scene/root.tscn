@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d05pl6wgir5h"]
+[gd_scene load_steps=3 format=3 uid="uid://d05pl6wgir5h"]
 
 [ext_resource type="PackedScene" uid="uid://baurdf1qwqyuk" path="res://Scene/paddle.tscn" id="1_0f46p"]
+[ext_resource type="PackedScene" uid="uid://dwotovyk2ru7t" path="res://Scene/ball.tscn" id="2_eglco"]
 
 [node name="Root" type="Node2D"]
 
@@ -18,8 +19,10 @@ color = Color(0.77801186, 0, 0.2465953, 1)
 polygon = PackedVector2Array(16, 656, 16, 24, 1136, 24, 1136, 656, 1192, 656, 1192, -32, -56, -32, -56, 656)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
-visible = false
 polygon = PackedVector2Array(16, 656, 16, 24, 1136, 24, 1136, 656, 1192, 656, 1192, -32, -56, -32, -56, 656)
 
 [node name="Paddle" parent="." instance=ExtResource("1_0f46p")]
 position = Vector2(576, 512)
+
+[node name="Ball" parent="." instance=ExtResource("2_eglco")]
+position = Vector2(573, 477)
