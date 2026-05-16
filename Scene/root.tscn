@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://d05pl6wgir5h"]
+[gd_scene load_steps=5 format=3 uid="uid://d05pl6wgir5h"]
 
 [ext_resource type="PackedScene" uid="uid://baurdf1qwqyuk" path="res://Scene/paddle.tscn" id="1_0f46p"]
+[ext_resource type="Script" uid="uid://cytko0dyp3dtb" path="res://Scripts/root.gd" id="1_fpdt3"]
 [ext_resource type="PackedScene" uid="uid://dwotovyk2ru7t" path="res://Scene/ball.tscn" id="2_eglco"]
+[ext_resource type="PackedScene" uid="uid://do5o8tflpvfbr" path="res://Scene/brick.tscn" id="3_2m03i"]
 
 [node name="Root" type="Node2D"]
+script = ExtResource("1_fpdt3")
 
 [node name="Background" type="ColorRect" parent="."]
 offset_left = -8.0
@@ -22,7 +25,40 @@ polygon = PackedVector2Array(16, 656, 16, 24, 1136, 24, 1136, 656, 1192, 656, 11
 polygon = PackedVector2Array(16, 656, 16, 24, 1136, 24, 1136, 656, 1192, 656, 1192, -32, -56, -32, -56, 656)
 
 [node name="Paddle" parent="." instance=ExtResource("1_0f46p")]
-position = Vector2(576, 512)
+position = Vector2(576, 560)
 
 [node name="Ball" parent="." instance=ExtResource("2_eglco")]
 position = Vector2(573, 477)
+
+[node name="Brick" parent="." instance=ExtResource("3_2m03i")]
+position = Vector2(483, 159)
+
+[node name="Brick2" parent="." instance=ExtResource("3_2m03i")]
+position = Vector2(543, 159)
+
+[node name="Brick3" parent="." instance=ExtResource("3_2m03i")]
+position = Vector2(603, 159)
+
+[node name="Brick4" parent="." instance=ExtResource("3_2m03i")]
+position = Vector2(663, 159)
+
+[node name="Bricks" type="Node" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 71.0
+offset_top = 55.0
+offset_right = 111.0
+offset_bottom = 78.0
+text = "Score : 0"
+
+[node name="WinLabel" type="Label" parent="."]
+visible = false
+offset_left = 382.0
+offset_top = 255.0
+offset_right = 784.0
+offset_bottom = 380.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 91
+text = "YOU WIN"
+horizontal_alignment = 1
+vertical_alignment = 1
