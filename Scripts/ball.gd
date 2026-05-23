@@ -3,6 +3,8 @@ extends CharacterBody2D
 const SPEED : float = 600.0
 var direction = Vector2.ZERO
 
+signal ball_exited
+
 func _ready() -> void:
 	randomize_direction()
 	
@@ -21,4 +23,9 @@ func randomize_direction():
 	direction = Vector2(
 		randf_range(-1.0, 1-0), -1
 	).normalized()
+	
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	ball_exited.emit()
 	
