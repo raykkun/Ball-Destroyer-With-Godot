@@ -38,10 +38,14 @@ func _on_ball_ball_exited() -> void:
 	$PressSpace.show()
 	$Ball.set_physics_process(false)
 	$Paddle.set_physics_process(false)
-	$Button.hide()
+	$Restart.hide()
 	
 	
 
 
-func _on_button_pressed() -> void:
+func _on_restart_pressed() -> void:
 	get_tree().reload_current_scene()
+
+
+func _on_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scene/main_menu.tscn")
